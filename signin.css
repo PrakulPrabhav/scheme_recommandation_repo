@@ -1,0 +1,228 @@
+:root {
+  --primary-blue: #1d72f3;
+  --primary-green: #22a049;
+  --green-hover: #1b853c;
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #d1d5db;
+  --white: #ffffff;
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.auth-wrapper {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Branding */
+.brand-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.emblem {
+  font-size: 32px;
+  color: #374151;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.brand-text .title {
+  font-size: 24px;
+  color: #15803d;
+  letter-spacing: -0.5px;
+}
+
+.brand-text .title b {
+  color: #166534;
+}
+
+.brand-text .sub-title {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #4b5563;
+}
+
+.sub-logos {
+  font-size: 10px;
+  color: var(--primary-blue);
+  margin-top: 2px;
+}
+
+/* Auth Card */
+.auth-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 32px 28px;
+  width: 100%;
+  box-shadow: var(--card-shadow);
+  border-bottom: 4px solid #6366f1;
+}
+
+.auth-card h2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.auth-card h2 .highlight {
+  color: var(--primary-blue);
+}
+
+/* Tabs */
+.tab-switcher {
+  display: flex;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  padding: 3px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+  background: var(--primary-blue);
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* Form Inputs */
+.input-group {
+  margin-bottom: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: var(--primary-blue);
+}
+
+.forgot-link-container {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+.forgot-link-container a {
+  font-size: 13px;
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.forgot-link-container a:hover {
+  text-decoration: underline;
+}
+
+/* Checkboxes */
+.checkbox-group {
+  margin-bottom: 12px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-blue);
+  cursor: pointer;
+}
+
+.checkbox-group a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+/* Submit Button */
+.btn-signin {
+  width: 100%;
+  background-color: var(--primary-green);
+  color: var(--white);
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-signin:hover {
+  background-color: var(--green-hover);
+}
+
+/* Card Footer */
+.card-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.card-footer a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card-footer a:hover {
+  text-decoration: underline;
+}

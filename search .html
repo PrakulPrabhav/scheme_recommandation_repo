@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Schemes - Yojna Mitra</title>
+  <link rel="stylesheet" href="search.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="brand-logo">
+        <i class="fa-solid fa-landmark"></i>
+        <span>Yojna<b>Mitra</b></span>
+      </a>
+      <span class="gov-text">Ministry of Electronics & Information Technology</span>
+    </div>
+
+    <div class="nav-right">
+      <button class="btn-signin">Sign In <i class="fa-solid fa-arrow-right"></i></button>
+      <button class="btn-lang"><i class="fa-solid fa-language"></i> English</button>
+      <button class="btn-theme" id="themeToggle"><i class="fa-solid fa-sun"></i></button>
+    </div>
+  </header>
+
+  <!-- Back Link Bar -->
+  <div class="sub-header">
+    <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Back</a>
+  </div>
+
+  <!-- Main Search & Filter Container -->
+  <div class="search-layout">
+    
+    <!-- Left Sidebar: Demographics & Filters -->
+    <aside class="sidebar-filters">
+      <div class="filter-header">
+        <h3>Filter By</h3>
+        <button class="btn-reset" id="resetFilters">Reset Filters</button>
+      </div>
+
+      <div class="filter-group">
+        <label for="stateFilter">State/UT</label>
+        <select id="stateFilter">
+          <option value="all">Select State</option>
+          <option value="delhi">Delhi</option>
+          <option value="maharashtra">Maharashtra</option>
+          <option value="karnataka">Karnataka</option>
+          <option value="up">Uttar Pradesh</option>
+        </select>
+      </div>
+
+      <div class="filter-group accordion">
+        <span>Scheme Category</span>
+        <i class="fa-solid fa-plus"></i>
+      </div>
+
+      <div class="filter-group accordion">
+        <span>Gender</span>
+        <i class="fa-solid fa-plus"></i>
+      </div>
+
+      <div class="filter-group">
+        <label for="ageFilter">Age</label>
+        <select id="ageFilter">
+          <option value="all">Select Age Group</option>
+          <option value="student">18 - 25 years</option>
+          <option value="adult">26 - 45 years</option>
+          <option value="senior">45+ years</option>
+        </select>
+      </div>
+
+      <div class="filter-group accordion">
+        <span>Caste / Category</span>
+        <i class="fa-solid fa-plus"></i>
+      </div>
+
+      <div class="filter-group">
+        <label for="occupationFilter">Occupation</label>
+        <select id="occupationFilter">
+          <option value="all">Select Occupation</option>
+          <option value="student">Student</option>
+          <option value="farmer">Farmer</option>
+          <option value="business">Small Business / Entrepreneur</option>
+          <option value="unemployed">Unemployed</option>
+        </select>
+      </div>
+
+      <div class="filter-checkboxes">
+        <label><input type="checkbox" id="minorityCheck"> Minority</label>
+        <label><input type="checkbox" id="disabledCheck"> Differently Abled</label>
+        <label><input type="checkbox" id="dbtCheck"> DBT Scheme</label>
+      </div>
+    </aside>
+
+    <!-- Right Side: Results & Main Search -->
+    <main class="results-content">
+      
+      <!-- Big Search Input Bar -->
+      <div class="main-search-bar">
+        <div class="search-input-wrapper">
+          <input type="text" id="mainSearchInput" placeholder="Search by scheme name, keywords or problem description..." />
+          <button id="mainSearchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <small class="search-tip"><i class="fa-solid fa-circle-info"></i> For an exact match, put the words in quotes. For example: "Education Loan".</small>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="tab-menu">
+        <button class="tab-btn active" data-tab="all">All Schemes</button>
+        <button class="tab-btn" data-tab="state">State/UT Schemes</button>
+        <button class="tab-btn" data-tab="central">Central Schemes</button>
+      </div>
+
+      <!-- Results Count & Sort -->
+      <div class="results-bar">
+        <span id="schemeCount">Total <strong>0</strong> schemes available</span>
+        <div class="sort-wrapper">
+          <label for="sortSelect">Sort :</label>
+          <select id="sortSelect">
+            <option value="relevance">Relevance</option>
+            <option value="newest">Newest First</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Dynamic Cards Container -->
+      <div class="schemes-list" id="schemesList">
+        <!-- Javascript populates cards here -->
+      </div>
+    </main>
+
+  </div>
+
+  <script src="search.js"></script>
+</body>
+</html>

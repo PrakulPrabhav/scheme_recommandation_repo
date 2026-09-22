@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yojna Mitra - Government Scheme Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'hi,ta,te,bn,gu,mr,kn,ml,pa,or,ur,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="emblem">
+        <i class="fa-solid fa-landmark"></i>
+      </div>
+      <div class="brand-name">
+        <span>Yojna<b>Mitra</b></span>
+      </div>
+      <div class="gov-logos">
+        <span class="sub-text">Ministry of Electronics & <br>Information Technology</span>
+      </div>
+    </div>
+<div id="google_translate_element"></div>
+    <div class="nav-right">
+      <a href="signin.html">
+        <button class="btn-signin" >Sign In <i class="fa-solid fa-arrow-right"></i></button>
+      </a>
+      <button class="btn-lang"><i class="fa-solid fa-language"></i> English</button>
+      <button class="btn-theme" id="themeToggle"><i class="fa-solid fa-sun"></i></button>
+    </div>
+    
+  </header>
+
+  <!-- Hero Section -->
+  <main class="hero-container">
+    <button class="carousel-arrow left-arrow" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+
+    <div class="hero-content">
+      <!-- Left Hero Banner -->
+      <div class="hero-left">
+        <div class="partner-logo">
+          <i class="fa-solid fa-mobile-screen-button"></i> <span>UMANG Integration</span>
+        </div>
+        <h1 class="hero-title">
+          National Scholarship Portal <br />
+          is now <span class="badge-live">LIVE</span> on Yojna Mitra
+        </h1>
+        <p class="hero-subtitle">
+          Students can describe their needs and apply for schemes easily through our AI assistant.
+        </p>
+        <button class="btn-apply" id="applyNowBtn">Apply Now</button>
+      </div>
+
+      <!-- Right Mockup Visual -->
+      <div class="hero-right">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-header">
+              <i class="fa-solid fa-arrow-left"></i>
+              <span>Scholarship Portal</span>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <div class="phone-body">
+              <div class="phone-card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div>
+                  <strong>Apply For Scholarship</strong>
+                  <span class="badge-new">NEW</span>
+                </div>
+              </div>
+              <div class="phone-card">
+                <i class="fa-solid fa-id-card"></i>
+                <div>
+                  <strong>One Time Registration</strong>
+                  <span class="badge-new">NEW</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-arrow right-arrow" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+  </main>
+
+  <!-- CTA Banner Section -->
+  <section class="cta-section">
+    <div class="hashtags">#GOVERNMENTSCHEMES / #SCHEMESFORYOU</div>
+    <button class="btn-find-schemes" id="findSchemesBtn">
+      Find Schemes For You <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </section>
+
+  <!-- Problem Input & Demographic Search Modal/Section -->
+  <section class="ai-problem-section" id="problemSection">
+    <div class="container">
+      <h2>Describe Your Needs / Problem</h2>
+      <p>Tell us your situation in plain words (e.g., "I am a B.Tech student needing an education loan")</p>
+      
+      <div class="problem-box">
+        <textarea id="problemInput" rows="3" placeholder="Type your situation or criteria here..."></textarea>
+        <button id="submitProblemBtn" class="btn-submit-problem">Search Matching Schemes</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Floating Help Widget -->
+  <div class="floating-widget" id="helpWidget">
+    <i class="fa-solid fa-robot"></i>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

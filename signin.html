@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In - Meri Pehchaan / Yojna Mitra</title>
+  <link rel="stylesheet" href="signin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    <!-- Top Branding Logo -->
+    <div class="brand-header">
+      <div class="logo-container">
+        <i class="fa-solid fa-landmark emblem"></i>
+        <div class="brand-text">
+          <span class="title">Meri<b>Pehchaan</b></span>
+          <span class="sub-title">SINGLE SIGN-ON SERVICE</span>
+          <div class="sub-logos">
+            <span>DigiLocker</span> • <span>e-Pramaan</span> • <span>JanParichay</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign In Card -->
+    <div class="auth-card">
+      <h2>Sign In to your account via <span class="highlight">DigiLocker</span></h2>
+
+      <!-- Tab Switcher -->
+      <div class="tab-switcher">
+        <button class="tab-btn active" data-type="mobile">Mobile</button>
+        <button class="tab-btn" data-type="username">Username</button>
+        <button class="tab-btn" data-type="other">Other ID</button>
+      </div>
+
+      <!-- Sign In Form -->
+      <form id="signinForm">
+        <!-- Main Input Field (Changes based on selected tab) -->
+        <div class="input-group">
+          <input type="text" id="mainIdentifier" placeholder="Mobile*" required />
+        </div>
+
+        <!-- PIN Input Field -->
+        <div class="input-group">
+          <input type="password" id="pinInput" placeholder="PIN*" maxlength="6" required />
+        </div>
+
+        <!-- Forgot PIN Link -->
+        <div class="forgot-link-container">
+          <a href="#" id="forgotPinBtn">Forgot security PIN?</a>
+        </div>
+
+        <!-- Options Checkboxes -->
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="pinlessAuth" />
+            <span>PIN less authentication</span>
+          </label>
+        </div>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="termsConsent" checked required />
+            <span>I consent to <a href="#">terms of use</a>.</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-signin">Sign In</button>
+      </form>
+
+      <!-- Footer Signup Link -->
+      <div class="card-footer">
+        New user? <a href="#" id="signUpLink">Sign up</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="signin.js"></script>
+</body>
+</html>
