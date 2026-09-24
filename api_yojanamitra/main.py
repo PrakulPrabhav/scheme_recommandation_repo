@@ -1,33 +1,57 @@
-from fastapi import FastAPI
+import os
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from dotenv import load_dotenv
+import google.generativeai as genai
 
-# 1. Create the backend app
-app = FastAPI()
+app = FastAPI(title="Yojna Mitra AI Backend")
 
-# 2. Allow your HTML front-end to talk to this backend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# 3. Create a test API endpoint (URL)
+class UserQuery(BaseModel):
+    problem: str
+
 @app.get("/")
 def home():
-    return {"message": "Hello! The Yojna Mitra backend is running!"}
+    return {"status": "success", "message": "Yojna Mitra API is Live!"}
 
-# 4. Create an endpoint to handle user needs
 @app.post("/api/recommend")
-def get_recommendations(data: dict):
-    user_problem = data.get("problem", "")
+def get_recommendations(data: UserQuery):
+    load_dotenv(override=True)
+    api_key = os.getenv("GEMINI_API_KEY")
     
-    # Right now, returning sample output to test
-    return {
-        "status": "success",
-        "user_input": user_problem,
-        "schemes": [
-            "Central Sector Scheme of Higher Education Loan",
-            "Vidya Lakshmi Education Loan Scheme"
-        ]
-    }
+    if not api_key:
+        raise HTTPException(status_code=500, detail="GEMINI_API_KEY missing in .env file")
+
+    # Configure Gemini with your API Key
+    genai.configure(api_key=api_key)
+
+    prompt = f"""
+    You are Yojna Mitra, an AI Government Scheme Eligibility Advisor for Indian citizens.
+    Analyze the following user situation and recommend the top 3 relevant government schemes (Central/State).
+
+    User Situation: "{data.problem}"
+
+    Respond with clean Markdown:
+    1. **Scheme Name**
+    2. **Ministry/Department**
+    3. **Eligibility Summary**
+    4. **Key Benefits**
+    """
+
+    try:
+        model = genai.GenerativeModel('gemini-3.6-flash')
+        response = model.generate_content(prompt)
+        return {
+            "status": "success",
+            "recommendations": response.text
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

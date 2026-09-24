@@ -18,7 +18,7 @@
     }, 'google_translate_element');
   }
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <body>
 
   <!-- Top Navigation Bar -->
@@ -34,14 +34,34 @@
         <span class="sub-text">Ministry of Electronics & <br>Information Technology</span>
       </div>
     </div>
-<div id="google_translate_element"></div>
+
     <div class="nav-right">
       <a href="signin.html">
         <button class="btn-signin" >Sign In <i class="fa-solid fa-arrow-right"></i></button>
       </a>
-      <button class="btn-lang"><i class="fa-solid fa-language"></i> English</button>
-      <button class="btn-theme" id="themeToggle"><i class="fa-solid fa-sun"></i></button>
+     <!-- Language Selector Dropdown -->
+    <div class="language-dropdown-wrapper">
+      <span class="lang-icon">🗣️</span>
+      <select id="customLangSelect" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="hi">हिंदी (Hindi)</option>
+        <option value="ta">தமிழ் (Tamil)</option>
+        <option value="te">తెలుగు (Telugu)</option>
+        <option value="bn">বাংলা (Bengali)</option>
+        <option value="mr">मराठी (Marathi)</option>
+        <option value="gu">ગુજરાતી (Gujarati)</option>
+        <option value="kn">ಕನ್ನಡ (Kannada)</option>
+        <option value="ml">മലയാളം (Malayalam)</option>
+        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+      </select>
     </div>
+
+    <button class="btn-icon">⚙️</button>
+  </div>
+</div>
+
+<!-- Load Google Translate API -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
   </header>
 
@@ -116,6 +136,7 @@
       <div class="problem-box">
         <textarea id="problemInput" rows="3" placeholder="Type your situation or criteria here..."></textarea>
         <button id="submitProblemBtn" class="btn-submit-problem">Search Matching Schemes</button>
+        <div id="resultsContainer"></div>
       </div>
     </div>
   </section>

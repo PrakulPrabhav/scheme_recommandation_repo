@@ -31,6 +31,49 @@ body {
   background-color: #eaf5ee;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+/* Hide default Google Translate widget and top banner */
+#google_translate_element,
+.goog-te-banner-frame,
+.skiptranslate,
+#goog-gt-tt {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+/* Custom Nav Dropdown Styling */
+.language-dropdown-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: all 0.2s ease;
+}
+
+.language-dropdown-wrapper:hover {
+  border-color: #2d7a4c;
+  background-color: #f9fafb;
+}
+
+.lang-icon {
+  font-size: 14px;
+}
+
+#customLangSelect {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #344054;
+  outline: none;
+  cursor: pointer;
+  padding-right: 4px;
+}
 
 .nav-left {
   display: flex;
